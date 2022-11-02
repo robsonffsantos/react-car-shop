@@ -1,10 +1,12 @@
+import Router from './routes/router'
+import { UserProvider } from './context/globalStateContext'
 import './App.css'
 
 const App = () => {
   return (
-    <div>
-      Teste
-    </div>
+    <UserProvider>
+      <Router />
+    </UserProvider>
   )
 }
 
