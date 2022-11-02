@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Home from "../pages/home/home"
+import Home from "../pages/home/index"
 
 const Router = () => {
   return (
@@ -7,8 +7,6 @@ const Router = () => {
       <Routes>
     
         <Route path='/' element={<Home/>}/>
-        <Route path='/countries' element={<CountriesOrdered/>}/>
-        <Route path='/characters/:id' element={<Char/>}/>
 
       </Routes>
     </BrowserRouter>
