@@ -1,5 +1,7 @@
+import { createContext, useContext } from "react"
 import { BASE_URL } from "../constants/url"
 import axios from "axios"
+import { UserContextProps, UserContextType } from '../types/types'
 
 export const GlobalStateContext = createContext({} as UserContextType)
 
