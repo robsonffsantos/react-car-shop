@@ -1,10 +1,12 @@
+import Header from "../components/header"
+import { MainContainer } from "./styles."
 
 
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <MainContainer>
+            <Header />
+        </MainContainer>
     )
 }
 
