@@ -1,12 +1,22 @@
-import Item from "./item"
-import { CardsContainer } from "./styles"
+import { useUser } from "../../context/globalStateContext"
+import { Car } from "../../types/types"
+import { CardsContainer, CarPhoto, Information, ItemCard } from "./styles"
 
 const Cards = () => {
-
+    const { carros } = useUser()
 
     return (
         <CardsContainer>
-            <Item />
+            {carros.map((carro) => {
+                return <ItemCard key={carro.id}>
+                    <CarPhoto src={carro.photo} />
+                    <Information><b>Marca</b>{carro.name}</Information>
+                    <Information><b>Modelo</b>{carro.model}</Information>
+                    <Information><b>Placa</b>{carro.licensePlate}</Information>
+                    <Information><b>Valor</b>R$ {carro.value}</Information>
+                </ItemCard>
+            })
+            }
         </CardsContainer>
     )
 }

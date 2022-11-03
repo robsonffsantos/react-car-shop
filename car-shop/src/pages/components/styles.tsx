@@ -33,4 +33,19 @@ export const ItemCard = styled.div`
     background-color: #fcfcff;
     border-radius: 8px;
     border: 2px solid #F02D3A;
+    padding: 0.75vmax;
+    align-items: center;
+    justify-content: space-evenly;
+`
+
+export const CarPhoto = styled.img`
+  height: 14vh;
+  width: 12vw;
+`
+
+export const Information = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
 `
