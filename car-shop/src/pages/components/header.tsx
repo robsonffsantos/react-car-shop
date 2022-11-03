@@ -19,7 +19,7 @@ const Header = () => {
       
         axios.post(`${BASE_URL}/auth/login`, body)
           .then(response => {
-            const access_token  =  response.data.access_token
+            const access_token = response.data.access_token
             localStorage.setItem("token", access_token)
             setToken(true)
           })
