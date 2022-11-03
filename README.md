@@ -12,8 +12,8 @@ ATENÇÃO: os interessados devem rodar também o back-end da aplicação para vi
 A página principal do website. Nessa página o usuário vê informações sobre os carros disponíveis na loja. Também pode fazer login para acessar a área administrativa no cabeçalho do site.
 
 ### Para acessar a área administrativa, utilizar o seguinte login:
-*username: john
-*password: password
+* username: john
+* password: password
 
 ### Ferramentas
 Nesse projeto utilizei as seguintes ferramentas:
