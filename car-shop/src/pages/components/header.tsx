@@ -3,12 +3,13 @@ import Lock from '../../assets/protect.png'
 import { useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../../constants/url"
+import { useUser } from "../../context/globalStateContext"
 
 const Header = () => {
     const [login, setLogin] = useState<boolean>(false)
     const [user, setUser] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-    const [token, setToken] = useState<boolean>(false)
+    const { token, setToken } = useUser()
 
     const handleSubmit = (username: string, password: string) => {
         const body = {
@@ -39,7 +40,7 @@ const Header = () => {
                         <LoginButton type="submit" onClick={() => handleSubmit(user, password)}>LOGIN</LoginButton>
                     </LoginArea> :
                     <div>
-                        Olá Admin!
+                        Olá, Admin!
                     </div>
                 }            
             </AdministrativeArea>

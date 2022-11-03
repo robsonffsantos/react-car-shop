@@ -17,7 +17,9 @@ export type Credentials = {
 
 export type UserContextType = {
   carros: Car[],
-  getCars: () => void
+  getCars: () => void,
+  token: string,
+  setToken: (value: boolean) => void
 }
 
 

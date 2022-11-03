@@ -7,7 +7,7 @@ export const GlobalStateContext = createContext({} as UserContextType)
 
 export const UserProvider = ({ children }: UserContextProps) => {
   let [carros, setCarros] = useState<Car[]>([])
-  const [token, setToken] = useState<string>('')
+  const [token, setToken] = useState<boolean>(false)
 
   const getCars = async() => {
     await axios.get(`${BASE_URL}/carro`)
@@ -25,7 +25,7 @@ export const UserProvider = ({ children }: UserContextProps) => {
     getCars()
   }, [])
 
-  const variables = { carros, getCars }
+  const variables = { carros, getCars, setToken, token }
 
   return (
     <GlobalStateContext.Provider value={variables}>

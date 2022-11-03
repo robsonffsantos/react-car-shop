@@ -1,5 +1,4 @@
 import { useUser } from "../../context/globalStateContext"
-import { Car } from "../../types/types"
 import { CardsContainer, CarPhoto, Information, ItemCard } from "./styles"
 
 const Cards = () => {
@@ -15,7 +14,7 @@ const Cards = () => {
                     <Information><b>Placa</b>{carro.licensePlate}</Information>
                     <Information><b>Valor</b>R$ {carro.value}</Information>
                 </ItemCard>
-            })
+                })
             }
         </CardsContainer>
     )
