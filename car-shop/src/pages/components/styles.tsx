@@ -15,14 +15,14 @@ export const CardsContainer = styled.div`
   background-color: #07A0C3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 30vh;
+  grid-auto-rows: 35vh;
   border: 3px solid #DD0426;
   height: 100%;
   margin: 3vmax;
   border-radius: 10px;
-  justify-content: center;
-  align-items: center;
   padding: 1vmax;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ItemCard = styled.div`
@@ -47,5 +47,5 @@ export const Information = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 60%;
+  width: 70%;
 `
