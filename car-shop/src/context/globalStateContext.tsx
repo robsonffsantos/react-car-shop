@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { BASE_URL } from "../constants/url"
 import axios from "axios"
-import { Car, UserContextProps, UserContextType } from '../types/types'
+import { Car, Credentials, UserContextProps, UserContextType } from '../types/types'
 
 export const GlobalStateContext = createContext({} as UserContextType)
 
 export const UserProvider = ({ children }: UserContextProps) => {
   let [carros, setCarros] = useState<Car[]>([])
+  const [token, setToken] = useState<string>('')
 
   const getCars = async() => {
     await axios.get(`${BASE_URL}/carro`)
@@ -18,7 +19,7 @@ export const UserProvider = ({ children }: UserContextProps) => {
     .catch((error) => {
       console.log(error)
     })
-  }  
+  }
 
   useEffect (() => {
     getCars()

@@ -56,10 +56,6 @@ export const Information = styled.div`
 export const AdministrativeArea = styled.div`
     display: flex;
     flex-direction: row;
-
-    :hover {
-      cursor: pointer;
-    }
 `
 
 export const Locker = styled.img`
@@ -84,4 +80,15 @@ export const AdmArea = styled.div`
     width: 12vw;
     align-items: center;
     justify-content: space-between;
+
+    :hover {
+      cursor: pointer;
+    }
+`
+
+export const LoginButton = styled.button`
+  width: 80%;
+  background-color: #fcfcff;
+  border: 2px solid #DD0426;
+  border-radius: 4px;
 `

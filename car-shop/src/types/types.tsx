@@ -9,6 +9,11 @@ export type Car = {
   value: number
 }
 
+export type Credentials = {
+  username: string,
+  password: string
+}
+
 
 export type UserContextType = {
   carros: Car[],
