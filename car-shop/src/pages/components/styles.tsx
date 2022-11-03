@@ -5,10 +5,11 @@ export const HeaderBar = styled.div`
     color: #fcfcff;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-size: 3em;
-    padding: 1vmax;
+    padding: 1vmax 3vmax 1vmax 3vmax;
+    height: 10vh;
 `
 
 export const CardsContainer = styled.div`
@@ -53,11 +54,8 @@ export const Information = styled.div`
 `
 
 export const AdministrativeArea = styled.div`
-    font-size: 1rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 10vw;
+    flex-direction: row;
 
     :hover {
       cursor: pointer;
@@ -67,4 +65,23 @@ export const AdministrativeArea = styled.div`
 export const Locker = styled.img`
     height: 4vh;
     width: 2vw;
+`
+
+export const LoginArea = styled.div`
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 9vw;
+    height: 11vh;
+`
+
+export const AdmArea = styled.div`
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 12vw;
+    align-items: center;
+    justify-content: space-between;
 `
