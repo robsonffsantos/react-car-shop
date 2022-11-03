@@ -11,6 +11,10 @@ ATENÇÃO: os interessados devem rodar também o back-end da aplicação para vi
 ![image](https://user-images.githubusercontent.com/86332847/199666287-c8512a9a-6cad-45fd-9236-5c7db74e0686.png)
 A página principal do website. Nessa página o usuário vê informações sobre os carros disponíveis na loja. Também pode fazer login para acessar a área administrativa no cabeçalho do site.
 
+### Para acessar a área administrativa, utilizar o seguinte login:
+*username: john
+*password: password
+
 ### Ferramentas
 Nesse projeto utilizei as seguintes ferramentas:
 
