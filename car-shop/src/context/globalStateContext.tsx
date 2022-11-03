@@ -1,13 +1,24 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 import { BASE_URL } from "../constants/url"
 import axios from "axios"
-import { UserContextProps, UserContextType } from '../types/types'
+import { Car, UserContextProps, UserContextType } from '../types/types'
 
 export const GlobalStateContext = createContext({} as UserContextType)
 
 export const UserProvider = ({ children }: UserContextProps) => {
+  let [carros, setCarros] = useState<Car[]>([])
 
-  const variables = {  }
+  const getCars = async() => {
+    await axios.get(`${BASE_URL}/carro`)
+    .then((res) => {
+        setCarros(res.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
+  const variables = { carros, getCars }
 
   return (
     <GlobalStateContext.Provider value={variables}>
