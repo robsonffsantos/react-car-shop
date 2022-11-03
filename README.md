@@ -24,4 +24,4 @@ Nesse projeto utilizei as seguintes ferramentas:
 ### Como rodar o projeto
 Será necessário ter o [gitBash](https://git-scm.com/downloads) instalado na sua máquina. Abra no local onde você deseja salvar o repositório e rode o comando git clone https://github.com/robsonffsantos/react-car-shop.git
 
-Após o download do repositório, abra um editor de código (vsCode, por exemplo) e navegue até a pasta car-shop. Faça a instação das ferramentas necessáris com npm install ou yarn add. Após a instalação finalizar, digite o comando npm run dev ou yarn dev para obter um endereço local e poder visualizar no seu navegador padrão.
+Após o download do repositório, abra um editor de código (vsCode, por exemplo) e navegue até a pasta car-shop. Faça a instação das ferramentas necessárias com npm install ou yarn add. Após a instalação finalizar, digite o comando npm run dev ou yarn dev para obter um endereço local e poder visualizar no seu navegador padrão.
