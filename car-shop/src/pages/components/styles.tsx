@@ -5,7 +5,7 @@ export const HeaderBar = styled.div`
     color: #fcfcff;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 3em;
     padding: 1vmax;
@@ -41,6 +41,8 @@ export const ItemCard = styled.div`
 export const CarPhoto = styled.img`
   height: 14vh;
   width: 12vw;
+  border: 1px solid #37505c;
+  border-radius: 2px;
 `
 
 export const Information = styled.div`
@@ -48,4 +50,21 @@ export const Information = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
+`
+
+export const AdministrativeArea = styled.div`
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+
+    :hover {
+      cursor: pointer;
+    }
+`
+
+export const Locker = styled.img`
+    height: 4vh;
+    width: 2vw;
 `
