@@ -7,6 +7,7 @@ export const GlobalStateContext = createContext({} as UserContextType)
 
 export const UserProvider = ({ children }: UserContextProps) => {
   let [carros, setCarros] = useState<Car[]>([])
+  // const [orderCars, setOrderCars] = useState<string[]>([])
 
   const getCars = async() => {
     await axios.get(`${BASE_URL}/carro`)
@@ -16,7 +17,17 @@ export const UserProvider = ({ children }: UserContextProps) => {
     .catch((error) => {
       console.log(error)
     })
-  }
+  }  
+
+//   const orderCars = () => {
+//     const keyObject = Object.keys(carros);
+
+//     const orderCountries = keyObject.sort(
+//         (a, b) => carros[b as keyof typeof carros].value - carros[a as keyof typeof carros].value
+//     )
+
+//     setOrderCars(orderCountries)
+// }
 
   const variables = { carros, getCars }
 
