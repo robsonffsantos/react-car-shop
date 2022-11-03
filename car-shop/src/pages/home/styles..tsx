@@ -6,3 +6,4 @@ export const MainContainer = styled.div`
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 `
+
