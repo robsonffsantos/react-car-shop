@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { BASE_URL } from "../constants/url"
 import axios from "axios"
 import { Car, UserContextProps, UserContextType } from '../types/types'
@@ -13,6 +13,7 @@ export const UserProvider = ({ children }: UserContextProps) => {
     await axios.get(`${BASE_URL}/carro`)
     .then((res) => {
         setCarros(res.data)
+        console.log(res.data)
     })
     .catch((error) => {
       console.log(error)
@@ -28,6 +29,10 @@ export const UserProvider = ({ children }: UserContextProps) => {
 
 //     setOrderCars(orderCountries)
 // }
+
+  useEffect (() => {
+    getCars()
+  }, [])
 
   const variables = { carros, getCars }
 

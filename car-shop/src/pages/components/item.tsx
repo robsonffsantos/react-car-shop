@@ -1,22 +1,19 @@
-import { useEffect } from "react"
 import { useUser } from "../../context/globalStateContext"
+import { ItemCard } from "./styles"
 
 
 const Item = () => {
-    const { carros, getCars } = useUser()
-
-    useEffect(() => {
-        getCars()
-    }, [])
+    const { carros } = useUser()
     
     return (
-        <div>
+        <ItemCard>
             {carros.map((carro) => {
                 return <div key={carro.id}>
                     <div>{carro.name}</div>
+                    <div>{carro.model}</div>
                 </div>
             })}
-        </div>
+        </ItemCard>
     )
 }
 
