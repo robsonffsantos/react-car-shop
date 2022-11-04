@@ -19,7 +19,7 @@ export const CardsContainer = styled.div`
   grid-auto-rows: 35vh;
   border: 3px solid #DD0426;
   height: 100%;
-  margin: 3vmax;
+  margin: 1vmax ;
   border-radius: 10px;
   padding: 1vmax;
   align-items: center;
@@ -90,8 +90,30 @@ export const AdmArea = styled.div`
 `
 
 export const LoginButton = styled.button`
-  width: 80%;
-  background-color: #fcfcff;
-  border: 2px solid #DD0426;
-  border-radius: 4px;
+    width: 80%;
+    background-color: #fcfcff;
+    border: 2px solid #DD0426;
+    border-radius: 4px;
+`
+
+export const AdminContainer = styled.div`
+    margin: 20px;
+    border: 2px solid #DD0426;
+    background-color: #07A0C3;
+    color: #fcfcff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.75vmax;
+    width: 20%;
+    height: 2vh;
+`
+
+export const AdminContainerOptions = styled.div`
+    :hover {
+      cursor: pointer;
+      background-color: #DD0426;
+      border-radius: 10px;
+      padding: 4px;
+    }
 `
