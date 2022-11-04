@@ -44,8 +44,7 @@ export const UserProvider = ({ children }: UserContextProps) => {
       "photo": photo,
       "value": +value
     }
-    console.log(auth)
-    console.log(body)
+
     axios.post(`${BASE_URL}/carro`, body, auth)
     .then((response) => {
       alert('Carro adicionado com sucesso')
@@ -55,12 +54,25 @@ export const UserProvider = ({ children }: UserContextProps) => {
     })
   }
 
+  const removeCar = async() => {
+    const access_token = localStorage.getItem('token')
+    const auth: any = { headers: { Authorization: `bearer ${access_token}` }}
+
+    await axios.delete(`${BASE_URL}/carro/${id}`, auth)
+    .then((response) => {
+      alert('Carro removido com sucesso')
+      getCars()
+    }).catch((error) => {
+      alert('Ocorreu um erro ao remover esse carro')
+    })
+  }
+
   useEffect (() => {
     checkToken()
     getCars()
   }, [])
 
-  const variables = { carros, getCars, setToken, token, name, setName, model, setModel, licensePlate, setLicensePlate, photo, setPhoto, value, setValue, addCar, setId }
+  const variables = { carros, getCars, setToken, token, name, setName, model, setModel, licensePlate, setLicensePlate, photo, setPhoto, value, setValue, addCar, setId, removeCar, id }
 
   return (
     <GlobalStateContext.Provider value={variables}>

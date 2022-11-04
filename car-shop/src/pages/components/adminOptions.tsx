@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring'
 import { useUser } from "../../context/globalStateContext"
 
 const AdminOptions = () => {
-    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar, carros, setId } = useUser()
+    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar, carros, setId, removeCar, id } = useUser()
     const [isOpenAdd, setIsOpenAdd] = useState<boolean>(false)
     const [isOpenRemove, setIsOpenRemove] = useState<boolean>(false)
 
@@ -19,6 +19,11 @@ const AdminOptions = () => {
     const closeAddCarModal = () => {
         addCar()
         openCloseAddCar()
+    }
+
+    const closeRemoveCarModal = () => {
+        removeCar()
+        openCloseRemove()
     }
 
     const animation = useSpring({
@@ -83,7 +88,7 @@ const AdminOptions = () => {
                                     )                                    
                                 })}
                                 <ButtonPair>
-                                    <ModalButton onClick={closeAddCarModal}>Remover</ModalButton>
+                                    <ModalButton onClick={closeRemoveCarModal}>Remover</ModalButton>
                                     <ModalButton onClick={openCloseRemove}>Fechar</ModalButton>
                                 </ButtonPair>                                
                             </AddModal>

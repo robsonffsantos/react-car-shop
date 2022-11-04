@@ -14,7 +14,6 @@ export type Credentials = {
   password: string
 }
 
-
 export type UserContextType = {
   carros: Car[],
   getCars: () => void,
@@ -32,10 +31,9 @@ export type UserContextType = {
   setValue: (value: number) => void,
   addCar: () => void,
   id: string,
-  setId: (value: string) => void
+  setId: (value: string) => void,
+  removeCar: () => void
 }
-
-
 
 export type UserContextProps = {
   children: ReactNode
