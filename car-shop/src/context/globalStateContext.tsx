@@ -13,6 +13,14 @@ export const UserProvider = ({ children }: UserContextProps) => {
   const [licensePlate, setLicensePlate] = useState<string>('')
   const [photo, setPhoto] = useState<string>('')
   const [value, setValue] = useState<number>(0)
+  const [id, setId] = useState<string>('')
+
+  const checkToken = () => {
+    const access_token = localStorage.getItem('token')
+    if (access_token) {
+      setToken(true)
+    }
+  }
 
   const getCars = async() => {
     await axios.get(`${BASE_URL}/carro`)
@@ -48,10 +56,11 @@ export const UserProvider = ({ children }: UserContextProps) => {
   }
 
   useEffect (() => {
+    checkToken()
     getCars()
   }, [])
 
-  const variables = { carros, getCars, setToken, token, name, setName, model, setModel, licensePlate, setLicensePlate, photo, setPhoto, value, setValue, addCar }
+  const variables = { carros, getCars, setToken, token, name, setName, model, setModel, licensePlate, setLicensePlate, photo, setPhoto, value, setValue, addCar, setId }
 
   return (
     <GlobalStateContext.Provider value={variables}>

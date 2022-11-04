@@ -189,3 +189,8 @@ export const ModalButton = styled.button`
     background-color: #DD0426;
   }
 `
+
+export const CarList = styled.div`
+  display: flex;
+  flex-direction: row;
+`

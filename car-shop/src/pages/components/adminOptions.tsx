@@ -1,14 +1,19 @@
 import { useState } from "react"
-import { AddModal, AdminContainer, AdminContainerOptions, ModalBackground, ModalPair, ModalWrapper, ButtonPair, ModalTitle, ModalInput, ModalButton } from "./styles"
+import { AddModal, AdminContainer, AdminContainerOptions, ModalBackground, ModalPair, ModalWrapper, ButtonPair, ModalTitle, ModalInput, ModalButton, CarList } from "./styles"
 import { useSpring, animated } from 'react-spring'
 import { useUser } from "../../context/globalStateContext"
 
 const AdminOptions = () => {
-    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar } = useUser()
-    const [isOpen, setIsOpen] = useState<boolean>(false)
+    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar, carros, setId } = useUser()
+    const [isOpenAdd, setIsOpenAdd] = useState<boolean>(false)
+    const [isOpenRemove, setIsOpenRemove] = useState<boolean>(false)
 
     const openCloseAddCar = () => {
-        setIsOpen(!isOpen)
+        setIsOpenAdd(!isOpenAdd)
+    }
+
+    const openCloseRemove = () => {
+        setIsOpenRemove(!isOpenRemove)
     }
 
     const closeAddCarModal = () => {
@@ -20,16 +25,16 @@ const AdminOptions = () => {
         config: {
           duration: 250
         },
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? `translateY(0%)` : `translateY(-100%)`
+        opacity: isOpenAdd || isOpenRemove ? 1 : 0,
+        transform: isOpenAdd || isOpenRemove ? `translateY(0%)` : `translateY(-100%)`
       })
 
     return (
         <AdminContainer>
             <AdminContainerOptions onClick={openCloseAddCar}>Adicionar carro</AdminContainerOptions>
-            <AdminContainerOptions>Remover carro</AdminContainerOptions>
+            <AdminContainerOptions onClick={openCloseRemove}>Remover carro</AdminContainerOptions>
             <AdminContainerOptions>Editar carro</AdminContainerOptions>
-            {isOpen && 
+            {isOpenAdd && 
                 <ModalBackground>
                     <animated.div style={animation}>
                         <ModalWrapper>
@@ -61,7 +66,30 @@ const AdminOptions = () => {
                                 </ButtonPair>                                
                             </AddModal>
                         </ModalWrapper>
-                    </animated.div></ModalBackground>}            
+                    </animated.div>
+                </ModalBackground>}
+                {isOpenRemove && 
+                <ModalBackground>
+                    <animated.div style={animation}>
+                        <ModalWrapper>
+                            <AddModal>
+                                <ModalTitle>Remover carro</ModalTitle>
+                                {carros.map((carro) => {
+                                    return (
+                                    <CarList>
+                                        <input type="radio" name="selection" onChange={() => setId(carro.id)} />
+                                        <label style={{ paddingLeft: '0.5vw' }}>{carro.name} {carro.model}</label>
+                                    </CarList>
+                                    )                                    
+                                })}
+                                <ButtonPair>
+                                    <ModalButton onClick={closeAddCarModal}>Remover</ModalButton>
+                                    <ModalButton onClick={openCloseRemove}>Fechar</ModalButton>
+                                </ButtonPair>                                
+                            </AddModal>
+                        </ModalWrapper>
+                    </animated.div>
+                </ModalBackground>}
         </AdminContainer>
     )
 }

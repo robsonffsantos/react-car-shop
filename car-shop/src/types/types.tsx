@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 export type Car = {
-  id: number,
+  id: string,
   photo: string,
   name: string,
   model: string,
@@ -31,6 +31,8 @@ export type UserContextType = {
   value: number,
   setValue: (value: number) => void,
   addCar: () => void,
+  id: string,
+  setId: (value: string) => void
 }
 
 
