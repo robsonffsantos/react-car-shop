@@ -13,7 +13,7 @@ export const UserProvider = ({ children }: UserContextProps) => {
     await axios.get(`${BASE_URL}/carro`)
     .then((res) => {
       const cars = res.data
-      cars.sort((a: number, b: number) => a.value - b.value)
+      cars.sort((a:any, b:any) => a.value - b.value)
         setCarros(cars)
     })
     .catch((error) => {
