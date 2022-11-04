@@ -78,11 +78,14 @@ export const AdmArea = styled.div`
     display: flex;
     flex-direction: column;
     width: 12vw;
+    padding: 10px;
+    border-radius: 8px;
     align-items: center;
     justify-content: space-between;
 
     :hover {
       cursor: pointer;
+      background-color: #DD0426;
     }
 `
 
