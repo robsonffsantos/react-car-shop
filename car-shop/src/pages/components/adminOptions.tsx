@@ -11,6 +11,11 @@ const AdminOptions = () => {
         setIsOpen(!isOpen)
     }
 
+    const closeAddCarModal = () => {
+        addCar()
+        openCloseAddCar()
+    }
+
     const animation = useSpring({
         config: {
           duration: 250
@@ -51,7 +56,7 @@ const AdminOptions = () => {
                                     <ModalInput type='number' onChange={e => setValue(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ButtonPair>
-                                    <ModalButton onClick={addCar}>Adicionar</ModalButton>
+                                    <ModalButton onClick={closeAddCarModal}>Adicionar</ModalButton>
                                     <ModalButton onClick={openCloseAddCar}>Fechar</ModalButton>
                                 </ButtonPair>                                
                             </AddModal>
