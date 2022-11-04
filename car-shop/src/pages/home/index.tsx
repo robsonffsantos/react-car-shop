@@ -1,8 +1,8 @@
 import { useUser } from "../../context/globalStateContext"
+import AdminOptions from "../components/adminOptions"
 import Cards from "../components/cards"
 import Header from "../components/header"
-import { AdmArea, MainContainer } from "./styles."
-
+import { MainContainer } from "./styles."
 
 const Home = () => {
     const { token } = useUser()
@@ -10,6 +10,7 @@ const Home = () => {
     return (
         <MainContainer>
             <Header />
+            { token && <AdminOptions /> }
             <Cards />
         </MainContainer>
     )
