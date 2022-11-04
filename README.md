@@ -15,6 +15,8 @@ A página principal do website. Nessa página o usuário vê informações sobre
 * username: john
 * password: password
 
+Como administrador o usuário pode adicionar ou remover veículos cadastrados.
+
 ### Ferramentas
 Nesse projeto utilizei as seguintes ferramentas:
 
