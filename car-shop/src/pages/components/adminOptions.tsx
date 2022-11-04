@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { AddModal, AdminContainer, AdminContainerOptions, ModalBackground, ModalPair, ModalWrapper, ButtonPair, ModalTitle, ModalInput, ModalButton } from "./styles"
 import { useSpring, animated } from 'react-spring'
-
+import { useUser } from "../../context/globalStateContext"
 
 const AdminOptions = () => {
+    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar } = useUser()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const openCloseAddCar = () => {
@@ -31,26 +32,26 @@ const AdminOptions = () => {
                                 <ModalTitle>Adicionar carro</ModalTitle>
                                 <ModalPair>
                                     <div>Marca</div>
-                                    <ModalInput></ModalInput>
+                                    <ModalInput type='text' onChange={e => setName(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ModalPair>
                                     <div>Modelo</div>
-                                    <ModalInput></ModalInput>
+                                    <ModalInput type='text' onChange={e => setModel(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ModalPair>
                                     <div>Placa</div>
-                                    <ModalInput></ModalInput>
+                                    <ModalInput type='text' onChange={e => setLicensePlate(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ModalPair>
                                     <div>URL da Foto</div>
-                                    <ModalInput></ModalInput>
+                                    <ModalInput type='text' onChange={e => setPhoto(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ModalPair>
                                     <div>Valor</div>
-                                    <ModalInput></ModalInput>
+                                    <ModalInput type='number' onChange={e => setValue(e.target.value)}></ModalInput>
                                 </ModalPair>
                                 <ButtonPair>
-                                    <ModalButton>Adicionar</ModalButton>
+                                    <ModalButton onClick={addCar}>Adicionar</ModalButton>
                                     <ModalButton onClick={openCloseAddCar}>Fechar</ModalButton>
                                 </ButtonPair>                                
                             </AddModal>

@@ -28,15 +28,16 @@ export const UserProvider = ({ children }: UserContextProps) => {
 
   const addCar = () => {
     const access_token = localStorage.getItem('token')
-    const auth: any = { headers: { auth: access_token } }
+    const auth: any = { headers: { Authorization: `bearer ${access_token}` } }
     const body = {
       "name": name,
       "model": model,
       "licensePlate": licensePlate,
       "photo": photo,
-      "value": value
+      "value": +value
     }
-
+    console.log(auth)
+    console.log(body)
     axios.post(`${BASE_URL}/carro`, body, auth)
     .then((response) => {
       alert('Carro adicionado com sucesso')

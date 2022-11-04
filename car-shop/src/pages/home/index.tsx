@@ -4,14 +4,13 @@ import Cards from "../components/cards"
 import Header from "../components/header"
 import { MainContainer } from "./styles."
 
-
 const Home = () => {
     const { token } = useUser()
     
     return (
         <MainContainer>
             <Header />
-            { !token && <AdminOptions /> }
+            { token && <AdminOptions /> }
             <Cards />
         </MainContainer>
     )

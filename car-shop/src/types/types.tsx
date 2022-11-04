@@ -19,7 +19,18 @@ export type UserContextType = {
   carros: Car[],
   getCars: () => void,
   token: boolean,
-  setToken: (value: boolean) => void
+  setToken: (value: boolean) => void,
+  name: string,
+  setName: (value: string) => void,
+  model: string,
+  setModel: (value: string) => void,
+  licensePlate: string,
+  setLicensePlate: (value: string) => void,
+  photo: string,
+  setPhoto: (value: string) => void,
+  value: number,
+  setValue: (value: number) => void,
+  addCar: () => void,
 }
 
 
