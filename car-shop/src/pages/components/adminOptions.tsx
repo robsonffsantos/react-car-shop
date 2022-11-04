@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AddModal, AdminContainer, AdminContainerOptions, ModalBackground, ModalWrapper } from "./styles"
+import { AddModal, AdminContainer, AdminContainerOptions, ModalBackground, ModalPair, ModalWrapper, ButtonPair, ModalTitle, ModalInput, ModalButton } from "./styles"
 import { useSpring, animated } from 'react-spring'
 
 
@@ -24,11 +24,35 @@ const AdminOptions = () => {
             <AdminContainerOptions>Remover carro</AdminContainerOptions>
             <AdminContainerOptions>Editar carro</AdminContainerOptions>
             {isOpen && 
-                <ModalBackground onClick={openCloseAddCar}>
+                <ModalBackground>
                     <animated.div style={animation}>
                         <ModalWrapper>
                             <AddModal>
-                                Modal
+                                <ModalTitle>Adicionar carro</ModalTitle>
+                                <ModalPair>
+                                    <div>Marca</div>
+                                    <ModalInput></ModalInput>
+                                </ModalPair>
+                                <ModalPair>
+                                    <div>Modelo</div>
+                                    <ModalInput></ModalInput>
+                                </ModalPair>
+                                <ModalPair>
+                                    <div>Placa</div>
+                                    <ModalInput></ModalInput>
+                                </ModalPair>
+                                <ModalPair>
+                                    <div>URL da Foto</div>
+                                    <ModalInput></ModalInput>
+                                </ModalPair>
+                                <ModalPair>
+                                    <div>Valor</div>
+                                    <ModalInput></ModalInput>
+                                </ModalPair>
+                                <ButtonPair>
+                                    <ModalButton>Adicionar</ModalButton>
+                                    <ModalButton onClick={openCloseAddCar}>Fechar</ModalButton>
+                                </ButtonPair>                                
                             </AddModal>
                         </ModalWrapper>
                     </animated.div></ModalBackground>}            

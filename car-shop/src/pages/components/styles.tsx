@@ -133,10 +133,9 @@ export const ModalBackground = styled.div`
 
 export const ModalWrapper = styled.div`
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: #fcfcff;
   color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   position: relative;
   z-index: 10;
   border-radius: 10px;
@@ -148,6 +147,45 @@ export const AddModal = styled.div`
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  height: 30vh;
+  width: 15vw;
+  padding: 6px;
+`
+
+export const ModalPair = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const ButtonPair = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`
+
+export const ModalTitle = styled.div`
+  text-align: center;
+  font-size: 20px;
+`
+
+export const ModalInput = styled.input`
+  width: 8vw;
+  height: 2vh;
+  border-radius: 4px;
+`
+
+export const ModalButton = styled.button`
+  height: 4vh;
+  width: 6vw;
+  background-color: #07A0C3;
+  border: 2px solid #DD0426;
+  border-radius: 4px;
+  color: #fcfcff;
+
+  :hover {
+    cursor: pointer;
+    background-color: #DD0426;
+  }
 `
