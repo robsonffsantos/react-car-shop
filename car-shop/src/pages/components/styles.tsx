@@ -151,6 +151,7 @@ export const AddModal = styled.div`
   height: 30vh;
   width: 15vw;
   padding: 6px;
+  overflow-y: auto;
 `
 
 export const ModalPair = styled.div`

@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring'
 import { useUser } from "../../context/globalStateContext"
 
 const AdminOptions = () => {
-    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar, carros, setId, removeCar, id } = useUser()
+    const { setName, setModel, setLicensePlate, setPhoto, setValue, addCar, carros, setId, removeCar } = useUser()
     const [isOpenAdd, setIsOpenAdd] = useState<boolean>(false)
     const [isOpenRemove, setIsOpenRemove] = useState<boolean>(false)
 
@@ -38,7 +38,6 @@ const AdminOptions = () => {
         <AdminContainer>
             <AdminContainerOptions onClick={openCloseAddCar}>Adicionar carro</AdminContainerOptions>
             <AdminContainerOptions onClick={openCloseRemove}>Remover carro</AdminContainerOptions>
-            <AdminContainerOptions>Editar carro</AdminContainerOptions>
             {isOpenAdd && 
                 <ModalBackground>
                     <animated.div style={animation}>
